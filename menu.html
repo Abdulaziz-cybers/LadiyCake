@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,28 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - La Diy Cake</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            // Save the current theme preference to localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Check for saved theme preference on load
+        window.onload = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        };
+    </script>
 </head>
 <body class="bg-gray-50 font-sans">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
-            <img src="logo.jpg" alt="La Diy Cake Logo" class="h-16">
-            <nav>
-                <a href="index.html" class="text-gray-700 hover:text-pink-500 mx-4">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-pink-500 mx-4">About Us</a>
-                <a href="contact.html" class="text-gray-700 hover:text-pink-500 mx-4">Contact</a>
-            </nav>
+<header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+        <img src="logo.jpg" alt="La Diy Cake Logo" class="h-16">
+        <nav>
+            <a href="index.html" class="text-gray-700 hover:text-pink-500 mx-4">Home</a>
+            <a href="about.html" class="text-gray-700 hover:text-pink-500 mx-4">About Us</a>
+            <a href="contact.html" class="text-gray-700 hover:text-pink-500 mx-4">Contact</a>
+        </nav>
+        <button onclick="toggleDarkMode()" class="text-gray-800 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 p-2 rounded-full shadow-md focus:outline-none absolute top-6 right-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v4M12 17v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M3 12h4m12 0h4m-5.78-7.78l-2.83 2.83M7.05 16.95l-2.83 2.83"></path>
+            </svg>
+        </button>
+    </div>
+</header>
+<main class="container mx-auto px-4 py-16">
+    <h1 class="text-3xl font-bold text-pink-600 text-center">Our Menu</h1>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-8 flex items-center justify-center">
+        <!-- Classic Chocolate Cake -->
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                <img src="https://media.istockphoto.com/id/1187830875/photo/confectioner-decorating-chocolate-cake-close-up.jpg?s=612x612&w=0&k=20&c=sAUop7R4pohc-Pghb3CqVJnFE44p2phGi47z7pjK4Lc=" alt="Classic Chocolate Cake" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-xl font-bold text-gray-800 mt-4">Classic Chocolate Cake</h2>
+            <p class="text-gray-600 mt-2">Rich and moist chocolate cake with a creamy chocolate ganache frosting.</p>
+            <p class="text-pink-600 font-semibold mt-4">$25.00</p>
         </div>
-    </header>
-    <main class="container mx-auto px-4 py-16">
-        <h1 class="text-3xl font-bold text-pink-600">Our Menu</h1>
-        <ul class="mt-4">
-            <li class="text-gray-700 py-2">Classic Chocolate Cake</li>
-            <li class="text-gray-700 py-2">Vanilla Cream Cake</li>
-            <li class="text-gray-700 py-2">Red Velvet Cake</li>
-        </ul>
-    </main>
-    <footer class="bg-gray-200 py-6">
-        <p class="text-center text-gray-600">© 2025 La Diy Cake. All rights reserved.</p>
-    </footer>
+
+        <!-- Vanilla Cream Cake -->
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                <img src="https://media.istockphoto.com/id/1187830875/photo/confectioner-decorating-chocolate-cake-close-up.jpg?s=612x612&w=0&k=20&c=sAUop7R4pohc-Pghb3CqVJnFE44p2phGi47z7pjK4Lc=" alt="Vanilla Cream Cake" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-xl font-bold text-gray-800 mt-4">Vanilla Cream Cake</h2>
+            <p class="text-gray-600 mt-2">Soft vanilla sponge layers filled with light cream and topped with fresh fruits.</p>
+            <p class="text-pink-600 font-semibold mt-4">$22.00</p>
+        </div>
+
+        <!-- Red Velvet Cake -->
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                <img src="https://media.istockphoto.com/id/1187830875/photo/confectioner-decorating-chocolate-cake-close-up.jpg?s=612x612&w=0&k=20&c=sAUop7R4pohc-Pghb3CqVJnFE44p2phGi47z7pjK4Lc=" alt="Red Velvet Cake" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-xl font-bold text-gray-800 mt-4">Red Velvet Cake</h2>
+            <p class="text-gray-600 mt-2">A classic red velvet cake with cream cheese frosting and a hint of cocoa.</p>
+            <p class="text-pink-600 font-semibold mt-4">$28.00</p>
+        </div>
+    </div>
+</main>
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+            <img src="logo.jpg" alt="Chef Logo" class="w-16 h-16 mx-auto rounded-full">
+        </div>
+        <div>
+            <h3 class="text-lg font-bold mb-4 text-teal-300">About Us</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline text-teal-400">Our Story</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Careers</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Catering</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Locations</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-bold mb-4 text-teal-300">Information</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline text-teal-400">Menu</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">News</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Contact</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="text-center text-sm text-gray-500 mt-8">© 2025 La Diy Cake. All rights reserved.</p>
+</footer>
 </body>
 </html>

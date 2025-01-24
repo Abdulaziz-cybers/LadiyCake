@@ -1,29 +1,141 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-gray-50">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Diy Cake</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            // Save the current theme preference to localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Check for saved theme preference on load
+        window.onload = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        };
+    </script>
 </head>
-<body class="bg-gray-50 font-sans">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
-            <img src="logo.jpg" alt="La Diy Cake Logo" class="h-16">
-            <nav>
-                <a href="about.html" class="text-gray-700 hover:text-pink-500 mx-4">About Us</a>
-                <a href="menu.html" class="text-gray-700 hover:text-pink-500 mx-4">Menu</a>
-                <a href="contact.html" class="text-gray-700 hover:text-pink-500 mx-4">Contact</a>
-            </nav>
+<body class="font-sans transition-all duration-300">
+<header class="bg-white dark:bg-gray-900 shadow">
+    <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+        <img src="logo.jpg" alt="La Diy Cake Logo" class="h-16">
+        <nav>
+            <a href="about.html" class="text-gray-800 dark:text-gray-300 hover:text-blue-500 mx-4">About Us</a>
+            <a href="menu.html" class="text-gray-800 dark:text-gray-300 hover:text-blue-500 mx-4">Menu</a>
+            <a href="contact.html" class="text-gray-800 dark:text-gray-300 hover:text-blue-500 mx-4">Contact</a>
+        </nav>
+        <!-- Dark Mode Toggle Button -->
+        <button onclick="toggleDarkMode()" class="text-gray-800 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 p-2 rounded-full shadow-md focus:outline-none absolute top-6 right-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v4M12 17v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M3 12h4m12 0h4m-5.78-7.78l-2.83 2.83M7.05 16.95l-2.83 2.83"></path>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 py-16">
+    <!-- Hero Section -->
+    <section class="text-center">
+        <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-100">Welcome to La Diy Cake</h1>
+        <p class="text-gray-600 dark:text-gray-300 mt-4">Delicious homemade cakes for every occasion.</p>
+        <div class="text-center mt-6">
+            <a href="menu.html" class="bg-blue-500 dark:bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-600 dark:hover:bg-blue-800">View Menu</a>
+            <a href="contact.html" class="bg-gray-700 dark:bg-gray-800 text-white px-6 py-3 rounded ml-4 hover:bg-gray-800 dark:hover:bg-gray-900">Order Now</a>
         </div>
-    </header>
-    <main class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold text-center text-pink-600">Welcome to La Diy Cake</h1>
-        <p class="text-center text-gray-700 mt-4">Delicious homemade cakes for every occasion.</p>
-    </main>
-    <footer class="bg-gray-200 py-6">
-        <p class="text-center text-gray-600">© 2025 La Diy Cake. All rights reserved.</p>
-    </footer>
+    </section>
+
+    <!-- Featured Cakes Section -->
+    <section class="mt-16">
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-100">Featured Cakes</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <!-- Cake 1 -->
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+                <div class="w-64 h-64 mx-auto rounded-full overflow-hidden">
+                    <img src="https://cdn.pixabay.com/photo/2023/09/04/20/39/cake-8233676_1280.jpg" alt="Cake 1" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mt-4">Chocolate Delight</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">A rich chocolate cake topped with ganache and sprinkles.</p>
+                <p class="text-gray-800 dark:text-gray-100 font-semibold mt-4">$30.00</p>
+            </div>
+
+            <!-- Cake 2 -->
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+                <div class="w-64 h-64 mx-auto rounded-full overflow-hidden">
+                    <img src="https://cdn.pixabay.com/photo/2023/09/04/20/39/cake-8233676_1280.jpg" alt="Cake 2" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mt-4">Berry Bliss</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Vanilla cake layered with fresh berries and cream.</p>
+                <p class="text-gray-800 dark:text-gray-100 font-semibold mt-4">$35.00</p>
+            </div>
+
+            <!-- Cake 3 -->
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+                <div class="w-64 h-64 mx-auto rounded-full overflow-hidden">
+                    <img src="https://cdn.pixabay.com/photo/2023/09/04/20/39/cake-8233676_1280.jpg" alt="Cake 3" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mt-4">Red Velvet Classic</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Our signature red velvet cake with cream cheese frosting.</p>
+                <p class="text-gray-800 dark:text-gray-100 font-semibold mt-4">$40.00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="mt-16 bg-gray-100 dark:bg-gray-900 py-10">
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-100">What Our Customers Say</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <blockquote class="text-center p-4 bg-white dark:bg-gray-800 shadow rounded">
+                <p class="text-gray-700 dark:text-gray-300 italic">"The best cakes I've ever had! Highly recommend the chocolate cake."</p>
+                <footer class="text-gray-500 dark:text-gray-400 mt-4">- Jane D.</footer>
+            </blockquote>
+            <blockquote class="text-center p-4 bg-white dark:bg-gray-800 shadow rounded">
+                <p class="text-gray-700 dark:text-gray-300 italic">"Beautiful and delicious cakes that made my event perfect."</p>
+                <footer class="text-gray-500 dark:text-gray-400 mt-4">- Mark S.</footer>
+            </blockquote>
+            <blockquote class="text-center p-4 bg-white dark:bg-gray-800 shadow rounded">
+                <p class="text-gray-700 dark:text-gray-300 italic">"Amazing flavors and great customer service. Will order again!"</p>
+                <footer class="text-gray-500 dark:text-gray-400 mt-4">- Sarah W.</footer>
+            </blockquote>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+            <img src="logo.jpg" alt="Chef Logo" class="w-16 h-16 mx-auto rounded-full">
+        </div>
+        <div>
+            <h3 class="text-lg font-bold mb-4 text-teal-300">About Us</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline text-teal-400">Our Story</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Careers</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Catering</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Locations</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-bold mb-4 text-teal-300">Information</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline text-teal-400">Menu</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">News</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Contact</a></li>
+                <li><a href="#" class="hover:underline text-teal-400">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="text-center text-sm text-gray-500 mt-8">© 2025 La Diy Cake. All rights reserved.</p>
+</footer>
 </body>
 </html>
